@@ -15,15 +15,25 @@
         <div class="container">
             <article class="image">
                 <img id="img1" alt="esta es una imagen aleatoria de perritos">
-                <button id="btn1">Add Faborites</button>
+                <button id="btn1">Add Favourites</button>
             </article>
             <article class="image">
                 <img id="img2" alt="esta es una imagen aleatoria de perritos">
-                <button id="btn2">Add Faborites</button>
+                <button id="btn2">Add Favourites</button>
             </article>
             <button class="load">Ver mas...</button>
         </div>
     </section>
+
+    <section id="upLoadingCat">
+        <h2>Sube la Foto de tu Gato</h2>
+
+        <form id="upLoadingForm">
+            <input id="file" type="file" name="file"/>
+            <button type="button" onclick="upLoadingFile()">Subir Foto</button>
+        </form>
+    </section>
+
     <section id="Favourite">
         <h2>Gatos fAVORITOS</h2>
         <article class="image">
@@ -31,6 +41,10 @@
             <button>Delete Faborites</button>
         </article>
     </section>
+
+    <footer>
+
+    </footer>
     <script src="./main/index.js"></script>
 </body>
 </html>

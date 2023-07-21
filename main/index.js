@@ -1,6 +1,7 @@
 const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=2";
 const API_URL_FAVOURITES =
   "https://api.thecatapi.com/v1/favourites?api_key=live_mb8YiaKtFcQuQDAa2eYb8bWJ8mfZbV5XtGuxJ2A693pqvTpHzpfBmOv7KuyStRd9";
+const API_URL_UPLOAD = "https://api.thecatapi.com/v1/images/upload?api_key=live_mb8YiaKtFcQuQDAa2eYb8bWJ8mfZbV5XtGuxJ2A693pqvTpHzpfBmOv7KuyStRd9";
 const API_URL_FAVOURITES_DELETE = (id) =>
   `https://api.thecatapi.com/v1/favourites/${id}?api_key=live_mb8YiaKtFcQuQDAa2eYb8bWJ8mfZbV5XtGuxJ2A693pqvTpHzpfBmOv7KuyStRd9`;
 
@@ -113,6 +114,33 @@ async function deleteFavourite(id) {
   } else {
     console.log("cat delete of favourite");
     reloadFavourites();
+  }
+}
+
+async function upLoadingFile() {
+  const form = document.getElementById("upLoadingForm");
+  const formData = new FormData(form);
+
+  console.log(formData.get("file"));
+
+  const res = await fetch(API_URL_UPLOAD, {
+    method: "POST",
+    headers: {
+      "X-API-KEY":
+        "live_mb8YiaKtFcQuQDAa2eYb8bWJ8mfZbV5XtGuxJ2A693pqvTpHzpfBmOv7KuyStRd9",
+    },
+    body: formData,
+  });
+
+  const data = await res.json();
+
+  if (res.status !== 201) {
+    spanError.innerHTML = `Hubo un error al subir michi: ${res.status} ${data.message}`;
+  } else {
+    console.log("Foto de michi cargada :)");
+    console.log({ data });
+    console.log(data.url);
+    addFavourite(data.id);
   }
 }
 
