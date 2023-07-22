@@ -1,4 +1,4 @@
-const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=2";
+const API_URL_RANDOM = "https://api.thecatapi.com/v1/images/search?limit=4";
 const API_URL_FAVOURITES =
   "https://api.thecatapi.com/v1/favourites?api_key=live_mb8YiaKtFcQuQDAa2eYb8bWJ8mfZbV5XtGuxJ2A693pqvTpHzpfBmOv7KuyStRd9";
 const API_URL_UPLOAD = "https://api.thecatapi.com/v1/images/upload?api_key=live_mb8YiaKtFcQuQDAa2eYb8bWJ8mfZbV5XtGuxJ2A693pqvTpHzpfBmOv7KuyStRd9";
@@ -30,14 +30,22 @@ async function reloadRandom() {
   } else {
     const img1 = document.getElementById("img1");
     const img2 = document.getElementById("img2");
+    const img3 = document.getElementById("img3");
+    const img4 = document.getElementById("img4");
     const btn1 = document.getElementById("btn1");
     const btn2 = document.getElementById("btn2");
+    const btn3 = document.getElementById("btn3");
+    const btn4 = document.getElementById("btn4");
 
     img1.src = data[0].url;
     img2.src = data[1].url;
+    img3.src = data[2].url;
+    img4.src = data[3].url;
 
     btn1.onclick = () => addFavourite(data[0].id);
     btn2.onclick = () => addFavourite(data[1].id);
+    btn3.onclick = () => addFavourite(data[2].id);
+    btn4.onclick = () => addFavourite(data[3].id);
   }
 }
 
@@ -60,9 +68,12 @@ async function reloadFavourites() {
       const article = document.createElement("article");
       const img = document.createElement("img");
       const btn = document.createElement("button");
-      const btnText = document.createTextNode("Delete Cat");
-
-      btn.appendChild(btnText);
+      // const btnText = document.createTextNode("Delete Cat");
+      const iconDelete = document.createElement("i")
+      
+      btn.appendChild(iconDelete);
+      iconDelete.classList += "fa-solid fa-trash-can"
+      // btn.appendChild(btnText);
       btn.onclick = () => deleteFavourite(cat.id);
       img.src = cat.image.url;
       img.width = 300;

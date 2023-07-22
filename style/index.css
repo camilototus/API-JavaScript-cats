@@ -8,27 +8,66 @@ html {
     font-size: 62.5%;
 }
 
-.container {
-    background-color: antiquewhite;
-    width: 100vw;
-    height: 50vh;
+#upLoadingCat h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 1.6rem 0;
+}
+
+#file {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.containerOne {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    border: none;
+}
+
+.frist-title {
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-end;
+}
+
 .image img{
-    width: 300px;
+    width: 150px;
+    height: 150px;
     border: 1px solid grey;
     border-radius: 20px;
+    object-fit: fill;
+    margin: 0.5rem 0.5rem 0 0.5rem;
 }
 
 .load {
-    background-color: black;
+    background-color: rgb(134, 137, 153);
     color: white;
     font-size: 2rem;
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
+    width: 50%;
+    box-shadow: 4px 5px 5px 0.5px rgba(0,0,0,0.5);
 }
