@@ -19,6 +19,44 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#Favourite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+#Favourite article {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-end;
+}
+
+#Favourite img{
+    width: 150px;
+    height: 150px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    object-fit: fill;
+    margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+#Favourite button {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    border: none;
+}
+
+.nameApp {
+    background-color: darkgray;
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    padding: 0.5rem;
+    font-size: 2.4rem;
+}
+
 .containerOne {
     display: flex;
     flex-direction: column;
@@ -70,4 +108,8 @@ html {
     cursor: pointer;
     width: 50%;
     box-shadow: 4px 5px 5px 0.5px rgba(0,0,0,0.5);
+}
+
+.titlefavourites {
+    text-align: center;
 }

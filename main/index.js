@@ -61,9 +61,9 @@ async function reloadFavourites() {
     const section = document.getElementById("Favourite");
     section.innerHTML = "";
     const h2 = document.createElement("h2");
-    const textH2 = document.createTextNode("Gatos fAVORITOS");
-    h2.appendChild(textH2);
-    section.appendChild(h2);
+    // const textH2 = document.createTextNode("Gatos fAVORITOS");
+    // h2.appendChild(textH2);
+    // section.appendChild(h2);
     data.forEach((cat) => {
       const article = document.createElement("article");
       const img = document.createElement("img");
